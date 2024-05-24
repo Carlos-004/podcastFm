@@ -1,0 +1,51 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.podcast{
+    margin-top: 40px;
+    width: 95%;
+
+
+    .podcast__grid{
+        @include m.gridFr(3fr,2fr);
+        gap: 20px;
+
+        .podcast__info{
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+
+            @include m.telefono{
+                margin-top: 20px;
+            }
+
+            .podcast__title{
+                font-size: 28px;
+                margin-bottom: 0;
+                position: absolute;
+                margin-top: -20px;
+            }
+
+            .borde{
+                width: 225px;
+                height: 2px;
+                border-bottom: solid 15px v.$verde;
+                margin-bottom: 20px;
+            }
+
+            .podcast__parrafo{
+                font-size: 18px;
+                line-height: 28px;
+                @include m.telefono{
+                    font-size: 17px;
+                }
+            }
+        }
+
+        @include m.telefono{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+}

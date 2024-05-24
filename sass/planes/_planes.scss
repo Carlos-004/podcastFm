@@ -1,0 +1,124 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+
+.planes{
+    margin-top: 50px;
+    background-color: v.$gris;
+
+    .planes__container {
+        width: 95%;
+        padding: 60px 0;
+        display: grid;
+        place-items: center;
+
+        .planes__info{
+            display: grid;
+            place-self: start;
+
+            .planes__title{
+                color: v.$blanco;
+                margin-bottom: 0;
+                position: absolute;
+                margin-top: -25px;
+            }
+
+            .borde{
+                width: 130px;
+                border-bottom: solid 15px v.$verde;
+                margin-bottom: 20px;
+            }
+
+            .planes__texto{
+                color: v.$blanco;
+                font-size: 18px;
+            }
+        }
+    }
+
+    
+}
+
+.planes__grid{
+    @include m.grid(0,3,1);
+    margin-top: 60px;
+
+    @include m.telefono{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .plan {
+        background-color: v.$blanco;
+        width: 250px;
+        display: grid;
+        place-items: center;
+        align-items: center;
+        align-content: center;
+        transition: transform 0.3s ease;
+        padding:0 0 30px 0;
+
+        &:hover{
+            transform:scale(1.2);
+        }
+
+        @include m.telefono{
+            margin-bottom: 20px
+        }
+
+        .plan__icon{
+            .img__icon{
+                width: 150px;
+                height: 300px;
+                margin-bottom:0;
+            }
+        }
+
+
+        .plan__info{
+            h3{
+                text-align: center;
+                text-transform: uppercase;
+            }
+            p{
+                font-weight: bold;
+                font-size: 22px;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            .lista li{
+                list-style: none;
+                margin-bottom: 10px;
+                text-align: center;
+                font-size: 20px;
+            }
+           
+
+            .bton{
+                display: block;
+                margin-top: 40px;
+                background-color: v.$verde;
+                text-align: center;
+                padding: 15px;
+                color: v.$gris;
+                font-size: 24px;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .plan__negocio{
+        background-color: v.$verde;
+        border-radius: 20px;
+        padding: 30px 0;
+        
+
+        .btn-dos{
+            border: solid 1px v.$blanco;
+            text-align: center;
+        }
+
+        
+    }
+}

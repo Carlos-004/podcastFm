@@ -1,0 +1,63 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.header{
+    background-image: url("../../img/header.webp");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    height: 540px;
+
+    .contenido__header{
+        background-color: rgba(0, 0, 0, 0.436);
+        .contenido{
+            padding: 30px 0;
+            height: 540px;
+            display: grid;
+            justify-content: start;
+            align-content: stretch;
+            justify-items: start;
+            position: relative;
+            left: 20%;
+            
+            @include m.telefono{
+               display: grid;
+               justify-content: center;
+               align-content: stretch;
+               justify-items: center;
+               position: static;
+            }
+    
+            .logo{
+               
+                .logo__img{
+                    width: 200px;
+                }
+            }
+    
+            .header__contenido{
+
+                .title{
+                    color: v.$blanco;
+                }
+
+                .header__btn{
+                    display: block;
+                    background-color: v.$verde;
+                    color: v.$gris;
+                    font-size: 18px;
+                    font-weight: bold;
+                    padding: 10px;
+                    width: 200px;
+                    text-align: center;
+    
+                    @include m.telefono{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    
+}

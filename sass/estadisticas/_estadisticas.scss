@@ -1,0 +1,36 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.estadisticas{
+    margin-top: 50px;
+    width: 95%;
+
+    .estadisticas__info{
+        .estadisticas__title{
+            margin-bottom: 0;
+            position: absolute;
+            margin-top: -25px;
+
+            @include m.telefono{
+                font-size: 24px;
+                text-align: center;
+                margin-top: -10px;   
+            }
+        }
+        
+        .borde{
+            width: 410px;
+            border-bottom: solid 15px v.$verde;
+            margin-bottom: 20px;
+
+            @include m.telefono{
+                width: 370px;
+            }
+        }
+
+        .estadisticas__parrafo{
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+    }
+}
