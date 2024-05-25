@@ -1,0 +1,75 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.testimoniales{
+    width: 95%;
+    margin-top: 50px;
+
+    .testimoniales__grid{
+        @include m.grid(20px,2,1);
+
+        @include m.telefono{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .testimoniales__info{
+            margin-top: 60px;
+
+            .testimoniales__title{
+                margin-bottom: 0;
+                position: absolute;
+                margin-top: -25px;
+            }
+            .borde{
+                width: 245px;
+                border-bottom: solid 15px v.$verde;
+                margin-bottom: 20px;
+            }
+        }
+
+        .container-text{
+            
+            .comillas{
+                width: 60px;
+            }
+
+            .informacion{
+                display: flex;
+                align-items: flex-start;
+                gap: 20px;
+                background-color: v.$verde;
+                margin-bottom: 40px;
+                padding: 20px;
+                border: solid 4px v.$gris;
+                border-radius: 10px;
+
+                @include m.laptop{
+                    width: 400px;
+                }
+
+                p{
+                    line-height: 24px;
+                }
+            }
+
+            .info_one{
+                margin-left: 10%;
+            }
+            .info_dos{
+                margin-left: 20%;
+            }
+            .info__tres{
+                margin-left: 30%;
+            }
+            @include m.telefono{
+                .info_one,
+                .info_dos,
+                .info__tres{
+                    margin: 0 0 20px 0;
+                }
+
+            }
+        }
+    }
+}

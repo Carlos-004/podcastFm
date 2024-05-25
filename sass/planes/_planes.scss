@@ -1,14 +1,13 @@
 @use "../base/variables" as v;
 @use "../base/mixins" as m;
 
-
 .planes{
-    margin-top: 50px;
     background-color: v.$gris;
+    margin-top: 60px;
 
-    .planes__container {
+    .planes__container{
         width: 95%;
-        padding: 60px 0;
+        padding: 70px 0;
         display: grid;
         place-items: center;
 
@@ -17,63 +16,71 @@
             place-self: start;
 
             .planes__title{
-                color: v.$blanco;
                 margin-bottom: 0;
                 position: absolute;
                 margin-top: -25px;
+                color: v.$blanco;
             }
 
             .borde{
-                width: 130px;
+                width: 120px;
                 border-bottom: solid 15px v.$verde;
                 margin-bottom: 20px;
-            }
 
+            }
             .planes__texto{
                 color: v.$blanco;
-                font-size: 18px;
+                font-size: 22px;
+
+                @include m.telefono{
+                    margin-bottom: 30px;
+                }
+           
             }
         }
-    }
 
-    
+    }
 }
 
 .planes__grid{
+    margin-top: 30px;
     @include m.grid(0,3,1);
-    margin-top: 60px;
 
     @include m.telefono{
         display: flex;
         flex-direction: column-reverse;
     }
 
-    .plan {
+    .plan__negocio{
+        background-color: v.$verde;
+        border-radius: 20px;    
+    }
+
+    .plan-blancon{
         background-color: v.$blanco;
-        width: 250px;
+        height: 500px;
+    }
+
+    .plan{
         display: grid;
         place-items: center;
-        align-items: center;
-        align-content: center;
+        place-self: center;
+        padding: 20px 0;
         transition: transform 0.3s ease;
-        padding:0 0 30px 0;
-
+        width: 260px;
         &:hover{
             transform:scale(1.2);
         }
 
         @include m.telefono{
-            margin-bottom: 20px
+            margin-bottom: 20px;
         }
 
         .plan__icon{
             .img__icon{
-                width: 150px;
-                height: 300px;
-                margin-bottom:0;
+                height: 150px;
             }
         }
-
 
         .plan__info{
             h3{
@@ -81,44 +88,31 @@
                 text-transform: uppercase;
             }
             p{
-                font-weight: bold;
-                font-size: 22px;
-                margin-bottom: 20px;
                 text-align: center;
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 20px;
             }
 
             .lista li{
                 list-style: none;
-                margin-bottom: 10px;
+                margin-bottom: 20px;
                 text-align: center;
-                font-size: 20px;
+                font-size: 18px;
             }
-           
 
             .bton{
-                display: block;
-                margin-top: 40px;
                 background-color: v.$verde;
+                display: block;
                 text-align: center;
                 padding: 15px;
                 color: v.$gris;
-                font-size: 24px;
                 font-weight: bold;
+                font-size: 20px;
+            }
+            .btn-dos{
+                border: solid 1px v.$blanco;
             }
         }
-    }
-
-    .plan__negocio{
-        background-color: v.$verde;
-        border-radius: 20px;
-        padding: 30px 0;
-        
-
-        .btn-dos{
-            border: solid 1px v.$blanco;
-            text-align: center;
-        }
-
-        
     }
 }
